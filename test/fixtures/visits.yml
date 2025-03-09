@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lastupdate: 2025-03-09 01:10:57
+  scheduled_start: 2025-03-09 01:10:57
+  scheduled_end: 2025-03-09 01:10:57
+  time_in: 2025-03-09 01:10:57
+  time_out: 2025-03-09 01:10:57
+  actual_arrival: 2025-03-09 01:10:57
+  actual_departure: 2025-03-09 01:10:57
+  event_description: MyText
+  event_title: MyString
+  scheduled_at: 2025-03-09 01:10:57
+  duration: 1
+  end_time: 2025-03-09 01:10:57
+  user: one
+  garden: one
+
+two:
+  lastupdate: 2025-03-09 01:10:57
+  scheduled_start: 2025-03-09 01:10:57
+  scheduled_end: 2025-03-09 01:10:57
+  time_in: 2025-03-09 01:10:57
+  time_out: 2025-03-09 01:10:57
+  actual_arrival: 2025-03-09 01:10:57
+  actual_departure: 2025-03-09 01:10:57
+  event_description: MyText
+  event_title: MyString
+  scheduled_at: 2025-03-09 01:10:57
+  duration: 1
+  end_time: 2025-03-09 01:10:57
+  user: two
+  garden: two

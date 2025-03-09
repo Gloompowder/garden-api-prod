@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assemblydist: 1
+  address: MyString
+  borough: MyString
+  communityboard: 1
+  congressionaldist: 1
+  coundist: 1
+  gardenname: MyString
+  juris: MyString
+  multipolygon: MyString
+  openhrsf: MyString
+  openhrsm: MyString
+  openhrssa: MyString
+  openhrssu: MyString
+  openhrsth: MyString
+  openhrstu: MyString
+  openhrsw: MyString
+  parksid: MyString
+  policeprecinct: MyString
+  statesenatedist: 1
+  status: MyString
+  zipcode: MyString
+
+two:
+  assemblydist: 1
+  address: MyString
+  borough: MyString
+  communityboard: 1
+  congressionaldist: 1
+  coundist: 1
+  gardenname: MyString
+  juris: MyString
+  multipolygon: MyString
+  openhrsf: MyString
+  openhrsm: MyString
+  openhrssa: MyString
+  openhrssu: MyString
+  openhrsth: MyString
+  openhrstu: MyString
+  openhrsw: MyString
+  parksid: MyString
+  policeprecinct: MyString
+  statesenatedist: 1
+  status: MyString
+  zipcode: MyString
