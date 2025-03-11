@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   # Association with visits
   has_many :visits, dependent: :destroy
+  has_many :gardens, through: :visits
 end

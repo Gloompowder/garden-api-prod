@@ -7,10 +7,11 @@ module Api
       def create
         self.resource = warden.authenticate!(auth_options)
         sign_in(resource_name, resource)
-        render json: { message: 'Logged in successfully', user: resource }
+        # Extract the token from the warden environment:
+        token = request.env['warden-jwt_auth.token']
+        render json: { user: resource, token: token }, status: :ok
       end
 
-      # DELETE /api/v1/logout
       def destroy
         sign_out(resource_name)
         render json: { message: 'Logged out successfully' }
