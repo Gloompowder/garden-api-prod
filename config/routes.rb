@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/healthcheck', to: 'welcome#index'
   devise_for :users,
              defaults: { format: :json },
              controllers: {

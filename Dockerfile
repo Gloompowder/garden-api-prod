@@ -5,16 +5,28 @@
 # docker run -d -p 80:80 -p 443:443 --name my-app -e RAILS_MASTER_KEY=<value from config/master.key> my-app
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
-ARG RUBY_VERSION=3.1.2
-FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+#previous ruby version
+# ARG RUBY_VERSION=3.1.2
+# FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+
+#updated rub yversion, removed multistage (slim AS base)
+FROM ruby:3.2.2-slim 
 
 # Rails app lives here
 WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips postgresql-client && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install -y \
+    build-essential \
+    curl \
+    libpq-dev \
+    postgresql-client \
+    libjemalloc2
+#Set environment variables
+ENV RAILS_ENV=production \
+    BUNDLE_DEPLOYMENT=1 \
+    BUNDLE_WITHOUT=development:test
 
 # Set production environment
 ENV RAILS_ENV="production" \
