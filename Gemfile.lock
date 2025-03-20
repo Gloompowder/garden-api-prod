@@ -314,7 +314,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
-  bundler (~> 2.6.2)
+  bundler (~> 2.6.6)
   debug
   devise
   devise-jwt
@@ -325,7 +325,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.2.2, >= 7.2.2.1)
   rubocop-rails-omakase
-  rubygems-update (~> 3.3.22)
+  rubygems-update (~> 3.3.27)
   soda-ruby
   tzinfo-data
 

@@ -2,8 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
-gem "rubygems-update", "~> 3.3.22"
-gem "bundler", "~> 2.6.2"
+gem "rubygems-update", "~> 3.3.27"
+gem "bundler", "~> 2.6.6"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 # Use postgresql as the database for Active Record
