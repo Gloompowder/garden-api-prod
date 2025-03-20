@@ -11,22 +11,15 @@ services:
     name: garden-api
     runtime: ruby
     buildCommand: |
-      gem update --system --no-document --silent
+      gem update --system -N --force --silent
       gem install bundler -v 2.6.6
       bundle config set force_ruby_platform true
       bundle _2.6.6_ install
       bundle exec rake assets:precompile
-      bundle exec rake assets:clean
     startCommand: bundle exec puma -C config/puma.rb
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: DATABASE_URL
-        fromDatabase:
-          name: garden_db
-          property: connectionString
       - key: RAILS_ENV
         value: production
-      - key: BUNDLE_WITHOUT
-        value: development:test
     plan: free
