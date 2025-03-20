@@ -115,6 +115,8 @@ GEM
       zeitwerk (~> 2.6)
     erubi (1.13.1)
     ffi (1.17.1)
+    ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -158,6 +160,10 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.5)
       mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    nokogiri (1.18.5-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.5-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.5-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -284,7 +290,9 @@ GEM
     zeitwerk (2.6.18)
 
 PLATFORMS
+  arm64-darwin
   ruby
+  x86_64-darwin
   x86_64-linux
 
 DEPENDENCIES
