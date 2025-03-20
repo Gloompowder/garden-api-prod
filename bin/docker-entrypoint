@@ -1,13 +1,20 @@
 #!/bin/bash -e
 
-# Enable jemalloc for reduced memory usage and latency.
-if [ -z "${LD_PRELOAD+x}" ] && [ -f /usr/lib/*/libjemalloc.so.2 ]; then
-  export LD_PRELOAD="$(echo /usr/lib/*/libjemalloc.so.2)"
+# Use explicit path (common for Debian-based images)
+JEMALLOC_PATH="/usr/lib/$(uname -m)-linux-gnu/libjemalloc.so.2"
+if [ -z "${LD_PRELOAD}" ] && [ -f "${JEMALLOC_PATH}" ]; then
+  export LD_PRELOAD="${JEMALLOC_PATH}"
 fi
 
-# If running the rails server then create or migrate existing database
-if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
-  ./bin/rails db:prepare
+# Separate create and migrate
+if [ "${RAILS_ENV}" = "production" ]; then
+  bundle exec rails db:create || true  # Safe if DB exists
+  bundle exec rails db:migrate
+fi
+
+# Check if any argument contains "server"
+if printf "%s\n" "${@}" | grep -qE '\b(server|puma|passenger)\b'; then
+  # Run DB tasks
 fi
 
 exec "${@}"

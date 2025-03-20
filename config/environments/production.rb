@@ -10,6 +10,7 @@ Rails.application.configure do
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
+  config.cache_classes = true
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
@@ -58,7 +59,7 @@ Rails.application.configure do
   # "info" includes generic and useful information about system operation, but avoids logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII). If you
   # want to log everything, set the level to "debug".
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
+  config.log_level = :info
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -69,7 +70,7 @@ Rails.application.configure do
 
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -95,4 +96,6 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+  config.log_formatter = ::Logger::Formatter.new
+
 end
