@@ -11,11 +11,11 @@ services:
     name: garden-api
     runtime: ruby
     buildCommand: |
-      gem update --system -N --force --silent
-      gem install bundler -v 2.6.6
-      bundle config set force_ruby_platform true
-      bundle _2.6.6_ install
-      bundle exec rake assets:precompile
+  gem update --system -N --force --silent
+  gem install bundler -v 2.6.6
+  bundle config set force_ruby_platform true
+  bundle _2.6.6_ install
+  bundle exec rake assets:precompile
     startCommand: bundle exec puma -C config/puma.rb
     envVars:
       - key: RAILS_MASTER_KEY
