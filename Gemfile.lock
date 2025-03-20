@@ -328,10 +328,10 @@ DEPENDENCIES
   devise
   devise-jwt
   dotenv-rails
-  ffi
+  ffi (~> 1.17.1)
   json
-  nokogiri
-  pg (~> 1.1)
+  nokogiri (~> 1.18.5)
+  pg (~> 1.5.9)
   puma (>= 5.0)
   rack-cors
   rails (~> 7.2.2, >= 7.2.2.1)
