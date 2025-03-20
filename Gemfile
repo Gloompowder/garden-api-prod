@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.1.2"
+ruby "3.1.2", patchlevel: "20"
 
 gem "rubygems-update", "~> 3.3.27"
 gem "bundler", "~> 2.6.6"
@@ -40,7 +40,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem "nokogiri", "~> 1.18.5", platform: :ruby
 gem "ffi", "~> 1.17.1", platform: :ruby
-gem "pg", "~> 1.5.9", platform: :ruby
+gem "sys-uname", "~> 1.0.4", platform: :ruby
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
