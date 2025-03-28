@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1
-FROM ruby:3.2.2-slim
+FROM ruby:3.1.2-slim
 
 # Set core environment
 ENV RAILS_ENV=production \
@@ -8,16 +8,15 @@ ENV RAILS_ENV=production \
     BUNDLE_WITHOUT=development:test \
     LD_PRELOAD=libjemalloc.so.2
 
-# Install dependencies
-RUN apt-get update -qq && \
-    apt-get install -y \
-    build-essential \
-    curl \
-    libpq-dev \
-    postgresql-client \
-    libjemalloc2 \
-    nodejs \
-    && rm -rf /var/lib/apt/lists/*
+    # Install dependencies
+    RUN apt-get update -qq && \
+        apt-get install -y \
+        build-essential \
+        curl \
+        libpq-dev \
+        postgresql-client \
+        git \  # Needed for any gem installations from git
+        && rm -rf /var/lib/apt/lists/*
 
 # Configure application home
 WORKDIR /rails

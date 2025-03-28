@@ -12,10 +12,14 @@ services:
     runtime: ruby
     # render.yaml
     buildCommand: |
-      # Force RubyGems update FIRST using Render-compatible method
-      gem update --system -N --force --silent --disable-gems
-      gem install bundler -v 2.6.6
+gem update --system -N --force --silent
+gem install bundler -v 2.6.6
+bundle config set force_ruby_platform true
+bundle lock --add-platform x86_64-linux
+bundle _2.6.6_ install
+      
       bundle config set force_ruby_platform true
+
       bundle _2.6.6_ install
       bundle exec rake assets:precompile
     startCommand: bundle exec puma -C config/puma.rb
