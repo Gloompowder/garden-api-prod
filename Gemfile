@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.1.2", patchlevel: "20"
+ruby '3.2.2'
 
 gem "rubygems-update", "~> 3.3.27"
 gem "bundler", "~> 2.6.6"
