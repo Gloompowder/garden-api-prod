@@ -3,5 +3,4 @@
 set -o errexit
 
 # Install dependencies
-bundle install && bundle exec rake db:migrate
-
+bundle install && bundle exec rake db:create db:migrate
