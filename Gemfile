@@ -37,7 +37,9 @@ gem 'devise-jwt'
 gem 'json'
 gem 'soda-ruby'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'pg', group: :production
+group :production do
+  gem 'pg'
+end
 
 gem "nokogiri", "~> 1.18.5", platform: :ruby
 gem "ffi", "~> 1.17.1", platform: :ruby
